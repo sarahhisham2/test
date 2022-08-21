@@ -18,12 +18,19 @@ export default {
 @import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+
+
+.title h1 {
+    position: absolute;
+    width: 183px;
+    height: 24px;
+    left: 50px;
+    top: 185px;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #222222;
 }
 </style>
