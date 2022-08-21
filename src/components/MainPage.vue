@@ -168,16 +168,18 @@ export default {
     height: 229px;
     object-fit: cover;
 }
-
+.discount-tag .fa{
+    padding-left: -2px;
+}
 .discount-tag {
     position: absolute;
     background: #fff;
     padding: 5px;
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 16px;
     border-radius: 50px;
     color: black;
-    right: 20px;
+    right: 26px;
     top: 10px;
     text-transform: capitalize;
 }
