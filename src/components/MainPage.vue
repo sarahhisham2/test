@@ -4,18 +4,20 @@
   </div>
   <div class="filter">
     <div class="filter-des">
-      <button
+      <a
         id="hide-filters"
         style="width: 157px"
         @click="showFilters = !showFilters">
         <span v-if="showFilters">Hide Filters</span>
         <span v-else>Show Filters</span>
-      </button>
+      </a>
+     <div class="filter-group">
 
-      <a  v-for="item in checkedCategories" :key="item" v-show="showFilters">{{ item }} <button @click="removeCategory(item)">x</button></a
+      <a id="filters" v-for="item in checkedCategories" :key="item" v-show="showFilters">{{ item }} <button @click="removeCategory(item)">x</button></a
       >
-      <a v-for="item in checkedBrands" :key="item" v-show="showFilters">{{ item }} <button @click="removeBrand(item)">x</button></a
+      <a id="filters" v-for="item in checkedBrands" :key="item" v-show="showFilters">{{ item }} <button @click="removeBrand(item)">x</button></a
       >
+     </div>
     </div>
   </div>
 
@@ -108,7 +110,7 @@
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star unchecked"></span>
-          {{ item.rating.total_reviews_count }}
+          <span id="rating">{{ item.rating.total_reviews_count }}</span>
         </p>
         <p class="product-short-des">{{ item.default_variant.price }}</p>
       </div>
@@ -180,6 +182,24 @@ components: {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+#rating{
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+
+/* Black */
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
 .range{
 width: 262px;
 height:200px;
@@ -230,7 +250,7 @@ margin-top: 875px;
 
 .product-container {
   margin-top: -806px;
-  margin-left: 216px;
+  margin-left: 186px;
   padding: 0 10vw;
   display: grid;
 
@@ -248,7 +268,7 @@ margin-top: 875px;
   flex: 0 0 auto;
   width: 300px;
   height: 398px;
-  margin-right: -40px;
+  margin-right: -110px;
 }
 
 .product-image {
@@ -315,7 +335,7 @@ margin-top: 875px;
   float: left;
   width: 248.41px;
   height: 22px;
-  margin-top: -20px;
+  margin-top: -40px;
   /* Display 3 */
   font-family: "Lato";
   font-style: normal;
@@ -324,13 +344,14 @@ margin-top: 875px;
   /* identical to box height */
   /* Text Color */
   color: #1b1c1e;
+
   /* Inside auto layout */
 }
 
 .product-short-des {
   float: left;
   position: absolute;
-  padding-top: 52px;
+  padding-top: 27px;
   overflow: hidden;
 
   height: 22px;
@@ -442,7 +463,9 @@ margin-top: 875px;
   display: inline-block;
 }
 
-
+#filters{
+padding-right:5px ;
+}
 
 .hide-filters {
   box-sizing: border-box;
@@ -456,36 +479,11 @@ margin-top: 875px;
   border: 1px solid #666666;
   border-radius: 4px;
 }
-
-.filter span {
-  position: relative;
-  font-style: normal;
-  padding-left: 5px;
-  /* Neutral/Black */
-
-  color: #23263b;
-}
-.filter a button{
+.filter-group a button{
 border:none;
 }
-.filter a {
-  display: inline-block;
-  float: left;
-  margin-top: 14px;
-  padding-left: 14px;
-  font-family: "Lato";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  /* identical to box height */
-
-  text-align: center;
-
-  /* Text */
-
-  color: #1b1c1e;
-display: flex;
+.filter-group a{
+display: inline;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -505,24 +503,62 @@ border-radius: 5px;
 flex: none;
 order: 0;
 flex-grow: 0;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 14px;
+/* identical to box height */
 
-  /* Inside auto layout */
+text-align: center;
 
-  /* Fields */
+/* Text */
+
+color: #1B1C1E;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
 }
+#hide-filters{
 
-.filter-des {
+border: 1px solid #666666;
+border-radius: 4px;
+box-sizing: border-box;
+
 position: absolute;
-  margin-left: 321px;
-}
+width: 157px;
+height: 32px;
+font-family: 'Lato';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
 
+
+/* Text Color */
+padding-top: 7px;
+padding-left:44px;
+color: #1B1C1E;
+}
+.filter-group{
+padding-top:5px ;
+display:inline-block;
+margin-left:171px;
+height:37px;
+
+}
 .filter {
   /* Rectangle */
 
   position: absolute;
   width: 3440px;
   height: 45px;
-  left: 0px;
+  left: 321px;
   top: 239px;
 padding: 10px;
   /* Button Text */
