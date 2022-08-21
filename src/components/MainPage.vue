@@ -51,7 +51,6 @@
             <div class="product-image">
                 <span class="discount-tag"><span class="fa fa-heart-o"></span></span>
                 <img :src="item.featured_image" class="product-thumb" alt="">
-
             </div>
             <div class="product-info">
                 <h2 class="product-brand">{{ item.title }}</h2>
@@ -82,6 +81,7 @@ export default {
             products: [],
             categories: [],
             brands: [],
+            filters: [],
         };
     },
     async mounted() {
@@ -123,24 +123,31 @@ export default {
 
     height: 18.87px;
     font-family: 'Lato';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    color: #000000;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+
+/* Black */
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
 }
 
 .product-container {
     margin-top: 286px;
     margin-left: 216px;
     padding: 0 10vw;
-    display: flex;
-    height: 3000px;
-
-    overflow-x: auto;
+    display: grid;
+   
+    width: 1000px;
+    grid-template-columns: auto auto auto auto;
     position: absolute;
     scroll-behavior: smooth;
 }
@@ -152,7 +159,7 @@ export default {
 .product-card {
     flex: 0 0 auto;
     width: 300px;
-    height: 300px;
+    height: 398px;
     margin-right: -40px;
 }
 
